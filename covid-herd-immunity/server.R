@@ -45,7 +45,7 @@ shinyServer(function(input, output) {
         dfr %>%
             ggplot(aes(x = date, y = num_immune)) +
             geom_line() +
-            geom_vline(xintercept = ymd("2021-01-10") + days(floor(days_to_herd_immunity)), colour = "red", size = 2) +
+            geom_vline(xintercept = ymd("2021-01-10") + days(floor(days_to_herd_immunity)  + days(input$days_to_efficacy)), colour = "red", size = 2) +
             labs(title = "Number immune by days (millions)",
                  subtitle = "Herd immunity date in red"
                  ) +
