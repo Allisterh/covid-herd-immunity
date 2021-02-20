@@ -39,6 +39,7 @@ shinyServer(function(input, output) {
         
         for (i in 2:nrow(dfr)) {
             dfr$num_immune[i] = dfr$num_immune[(i-1)] + num_new_immune_per_day
+            dfr$date[i] = dfr$date[i] + days(input$days_to_efficacy)
         }
         
         dfr %>%
