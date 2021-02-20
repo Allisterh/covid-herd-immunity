@@ -29,7 +29,7 @@ shinyServer(function(input, output) {
         
         num_needed = herd_immunity_target - present_num_immune
         
-        num_new_immune_per_day = input$vaccines_administered_daily_millions*1e6*portion_at_risk*vaccine_efficacy
+        num_new_immune_per_day = input$vaccines_administered_daily_millions*1e6*portion_at_risk*input$efficacy
         
         days_to_herd_immunity = num_needed / num_new_immune_per_day
         
